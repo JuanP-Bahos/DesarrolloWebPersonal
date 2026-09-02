@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mi primer html</title>
+</head>
+<body>
+    <h1> Hola, Mundo </h1>
+    <p> Juan P. Bahos <br> AAAAAA</p><br>
+    <img src = "../imagenes/davo.jpg" alt = "d">
+    <img src = "../imagenes/chelsea.jpg" alt = "c">
+    <div id="contenedor"></div>
+
+    <p>Este es un párrafo de ejemplo<BR> texto después del salto de línea</p>
+
+
+    <p>
+        <strong> strong <br></strong>
+        <em> em <br></em>
+        <u> u <br></u>
+        <sub> sub <br></sub>
+        <sup> sup <br></sup>
+    </p>
+
+    <p>Representemos los siguientes estilos en HTML</p>
+
+    <p>
+        La <em>fórmula</em> del <strong>agua</strong> es H<sub>2</sub>O<br>
+        Y un <u>número</u> elevado al <strong>cuadrado</strong> es X<sup>2</sup>
+    </p>
+
+    
+
+
+ <!-- colocar imagen varias veces -->
+<script>
+  const contenedor = document.getElementById("contenedor");
+
+  for (let i = 0; i < 10; i++) {
+    const img = document.createElement("img");
+    img.src = "../imagenes/davo.jpg";
+    img.alt = "Imagen repetida";
+    contenedor.appendChild(img);
+  }
+</script>
+
+</body>
+</html>
