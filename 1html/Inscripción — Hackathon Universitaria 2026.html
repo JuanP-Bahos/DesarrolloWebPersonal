@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripción — Hackathon Universitaria 2026</title>
+
+  <!-- ============================================================
+       ESTILOS DE APOYO — NO MODIFICAR NI AGREGAR CSS.
+       Esta actividad se evalúa SOLO sobre HTML.
+       ============================================================ -->
+  <style>
+    body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;background:#f6f7f9;color:#1a1a1a;line-height:1.5}
+    h1{font-size:1.5rem;margin-bottom:.25rem}
+    .intro{color:#555;margin-top:0}
+    form{background:#fff;border:1px solid #ddd;border-radius:8px;padding:20px}
+    fieldset{border:1px solid #d6d6d6;border-radius:6px;margin:0 0 20px;padding:16px}
+    legend{font-weight:700;padding:0 6px}
+    label{display:block;margin:12px 0 4px;font-weight:600;font-size:.9rem}
+    input,select,textarea{width:100%;padding:8px;border:1px solid #bbb;border-radius:4px;font:inherit;box-sizing:border-box}
+    input[type=radio],input[type=checkbox]{width:auto;margin-right:6px}
+    input[type=range],input[type=color]{padding:0}
+    .inline label{display:inline-block;font-weight:400;margin-right:16px}
+    button{padding:10px 18px;border:0;border-radius:4px;font:inherit;cursor:pointer;margin-right:8px}
+    button[type=submit]{background:#2563eb;color:#fff}
+    button[type=reset]{background:#e5e7eb}
+    small{color:#666;font-weight:400;display:block;margin-top:2px}
+    input:user-invalid,select:user-invalid,textarea:user-invalid{border-color:#dc2626;background:#fff5f5}
+    .todo{background:#fffbe6;border-left:4px solid #f59e0b;padding:10px 14px;margin:12px 0;font-size:.85rem}
+  </style>
+</head>
+<body>
+
+  <h1>Hackathon Universitaria 2026</h1>
+  <p class="intro">Completa el formulario de inscripción. Tiempo estimado: 30 minutos.</p>
+
+  <!-- ============================================================
+       TODO 0 — Cierra correctamente la etiqueta <form>.
+       Debe enviar los datos a "procesar-inscripcion.php"
+       usando el método que NO expone los datos en la URL.
+       ============================================================ -->
+  <form action="________" method="________">
+
+    <!-- ========================================================
+         BLOQUE 1 — DATOS PERSONALES  (ya resuelto: es tu modelo)
+         Observa cómo se usan:
+           · <fieldset> + <legend> para agrupar
+           · <label for="..."> enlazado con el id del campo
+           · name  -> nombre con el que viaja el dato
+           · required, minlength, autocomplete
+         ======================================================== -->
+    <fieldset>
+      <legend>1. Datos personales</legend>
+
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre"
+             placeholder="Ana María Restrepo"
+             minlength="5" maxlength="60"
+             autocomplete="name" required>
+
+      <label for="correo">Correo institucional *</label>
+      <input type="email" id="correo" name="correo"
+             placeholder="ana.restrepo@universidad.edu.co"
+             autocomplete="email" required>
+      <small>Debe ser un correo válido.</small>
+    </fieldset>
+
+
+    <!-- ========================================================
+         BLOQUE 2 — CONTACTO Y FECHAS
+         ======================================================== -->
+    <fieldset>
+      <legend>2. Contacto y fechas</legend>
+
+      <label for="celular">Celular *</label>
+      <input type="tel" id="celular" name="celular"
+             placeholder="3123456789"
+             pattern="[0-9]{10}"
+             title="Debe tener 10 dígitos"
+             required>
+
+      <label for="nacimiento">Fecha de nacimiento *</label>
+      <input type="date" id="nacimiento" name="nacimiento"
+             max="2010-12-31"
+             required>
+
+      <label for="portafolio">Portafolio web</label>
+      <input type="url" id="portafolio" name="portafolio"
+             placeholder="https://...">
+    </fieldset>
+
+
+
+    <fieldset>
+      <legend>3. Perfil del participante</legend>
+
+      <label for="programa">Programa académico *</label>
+      <select id="programa" name="programa" required>
+        <option value="" disabled selected>-- Selecciona --</option>
+        <optgroup label="Ingeniería">
+          <option value="sistemas">Sistemas</option>
+          <option value="industrial">Industrial</option>
+          <option value="electronica">Electrónica</option>
+        </optgroup>
+        <optgroup label="Diseño">
+          <option value="grafico">Gráfico</option>
+          <option value="multimedia">Multimedia</option>
+        </optgroup>
+      </select>
+
+      <label>Nivel de experiencia *</label>
+      <div class="inline">
+        <input type="radio" id="nivel-basico" name="nivel" value="basico" checked required>
+        <label for="nivel-basico">Básico</label>
+
+        <input type="radio" id="nivel-intermedio" name="nivel" value="intermedio">
+        <label for="nivel-intermedio">Intermedio</label>
+
+        <input type="radio" id="nivel-avanzado" name="nivel" value="avanzado">
+        <label for="nivel-avanzado">Avanzado</label>
+      </div>
+
+      <label>Tecnologías que dominas</label>
+      <div class="inline">
+        <input type="checkbox" id="tec-html" name="tecnologias" value="html">
+        <label for="tec-html">HTML</label>
+
+        <input type="checkbox" id="tec-css" name="tecnologias" value="css">
+        <label for="tec-css">CSS</label>
+
+        <input type="checkbox" id="tec-js" name="tecnologias" value="javascript">
+        <label for="tec-js">JavaScript</label>
+
+        <input type="checkbox" id="tec-py" name="tecnologias" value="python">
+        <label for="tec-py">Python</label>
+      </div>
+
+      <label for="horas">Horas semanales disponibles *</label>
+      <input type="number" id="horas" name="horas"
+             min="5" max="40" step="5" value="10"
+             required>
+    </fieldset>
+
+
+
+    <fieldset>
+      <legend>4. Materiales y comentarios</legend>
+
+      <label for="hojavida">Hoja de vida (PDF) *</label>
+      <input type="file" id="hojavida" name="hojavida"
+             accept=".pdf,application/pdf">
+
+      <label for="motivacion">¿Por qué quieres participar? *</label>
+      <textarea id="motivacion" name="motivacion"
+                rows="4" maxlength="300"
+                placeholder="Cuéntanos brevemente tu motivación..."
+                required></textarea>
+
+      <div>
+        <input type="checkbox" id="terminos" name="terminos" required>
+        <label for="terminos" style="display:inline">Acepto el tratamiento de mis datos personales *</label>
+      </div>
+    </fieldset>
+
+
+    <button type="submit">Enviar inscripción</button>
+    <button type="reset">Borrar</button>
+
+
+</body>
+</html>
