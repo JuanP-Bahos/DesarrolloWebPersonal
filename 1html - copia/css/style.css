@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    background-color: #e21313;
+}
+h1{
+    background-color: #d39292;
+    color: rgb(160, 148, 148);
+}
