@@ -1,0 +1,3 @@
+Coloca aquí tus imágenes:
+- esopo.jpg      (foto de Esopo, usada en index.html)
+- lunalista.png  (viñeta de las listas, usada en estilos.css)

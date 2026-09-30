@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,700;1,500&display=swap');
+body{
+	font-family: 'Muli', sans-serif;
+}
+
+.titulo{
+	margin: 20px Auto;
+
+}
+.titulo h1{
+	
+	color: #FFFFFF;
+	text-shadow: 0px 0px 10px #FF0000;
+	font-size: 40px;
+	font-family: 'Fredoka One', cursive;
+	margin-left: 30px;
+
+	
+}
+.titulo img{
+	width: 150px;
+
+
+}
+
+.contenido{
+	width: 1000px;
+	margin: 30px Auto;
+}
+
+.contenido h2{
+	font-family: 'Fredoka One', cursive;
+}
+.contenido ul{
+	list-style-image: url(../imagenes/lunalista.png);
+	
+}
+
+.personaje{
+	width: 800px;
+	background: linear-gradient(#F9A9FB,#F9D3FA);
+	margin: 20px 0px;
+	padding: 30px 30px;
+	box-shadow: 3px 3px 7px #999999;
+	font-family: 'Muli', sans-serif;
+
+}
+
+.personaje img{
+	width: 150px;
+	border: 7px solid #FFFFFF;
+	border-radius: 50%;
+	float: left;
+	margin-right: 20px;
+
+}
+.personaje img:hover{
+
+
+}
+.personaje h2{
+	color: #FFFFFF;
+	text-shadow: 2px 2px 4px #000000;
+
+}
+
+.personaje p{
+	text-align: justify;
+}
+
+
+
+
+
+.boton{
+width: 120px;
+background-color: #FF0000;
+color: #FFFFFF;
+padding: 20px 20px;
+border-radius: 10px;
+
+}
+.boton a{
+	margin: 20px 0;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.boton:hover{
+background-color: #0000FF;
+transition-property: background-color;
+transition-duration: 3s;
+transition-timing-function: linear;
+transition-delay: 3s;
+}
+
+.titulo img{
+	transform: translateX(700px);
+	transition: transform 10s linear 3s;
+}
+
+.titulo h1{
+	transform: translateY(-55px);
+	transition: transform 5s linear 4s;
+}
+.personaje img:hover{
+	transform:rotate(-60deg) scale(1.5);
+	transition: transform 3s ease-out 1s;
+}
+.cajaprincipal{
+	width: 270px;
+	height: 350px;
+	background-color: #000000;
+	color: #FFFFFF;
+	margin:20px Auto;
+	text-align: center;
+	box-shadow: 0px 0px 20px #000000;
+	overflow: hidden;
+}
+.encabezado{
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: 'Fredoka One', cursive;
+	padding: 20px 0;
+}
+.cajaperfil{
+	width: 540px;
+	
+}
+
+.cajaperfil:hover{
+	transform: translateX(-270px);
+	transition: transform 2s linear 1s;
+}
+.foto,.datos{
+	width: 270px;
+	text-align: center;
+	margin: 20px 0;
+	float: left;
+
+}
+.foto img{
+	width: 150px;
+	border: 5px solid #FFFFFF;
+	border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   BIOGRAFÍA DE ESOPO (index.html)
+   ========================================== */
+.biografia{
+	width: 800px;
+	max-width: 90%;
+	margin: 30px Auto;
+	padding: 25px 30px;
+	background-color: #1FA98A;
+	border: 4px dashed #E6E600;
+	color: #FFFFFF;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 15px;
+	overflow: hidden;
+}
+.biografia h1{
+	font-size: 28px;
+	margin: 0 0 20px 0;
+	color: #FFFFFF;
+}
+.biografia img{
+	width: 150px;
+	float: left;
+	margin: 0 20px 10px 0;
+	border: 4px solid #FFFFFF;
+}
+.biografia p{
+	text-align: justify;
+	margin: 0 0 15px 0;
+}
+.biografia .homero{
+	color: #E6E600;
+	font-style: italic;
+	text-decoration: underline;
+}
+.biografia .otras{
+	clear: both;
+	padding-top: 10px;
+}
+.biografia .otras h2{
+	font-family: 'Fredoka One', cursive;
+	font-size: 20px;
+	margin: 0 0 5px 0;
+}
+.biografia .otras a{
+	color: #E6E600;
+}
+.biografia .otras ul{
+	list-style-type: disc;
+	list-style-image: url(../imagenes/lunalista.png);
+	margin: 10px 0 0 25px;
+	padding: 0;
+}
+.biografia .otras li{
+	margin-bottom: 8px;
+	font-size: 16px;
+}
+.biografia .otras > a{
+	font-size: 16px;
+}
+.biografia img.fabula{
+	display: block;
+	float: none;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto 15px auto;
+}

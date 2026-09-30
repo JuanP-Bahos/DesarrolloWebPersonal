@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mis personajes</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header>
+		<h1 class="titulo">Mis personajes</h1>
+	</header>
+
+	<main>
+		<div class="card" id="cardPersonaje">
+
+			<img class="imagen" src="imagenes/personaje.jpg" alt="Nombre del personaje">
+			<span class="tag">Velocidad</span>
+
+			<div class="contenido">
+				<span class="tipo">Héroe</span>
+				<h2>Flash</h2>
+				<p class="descripcion">Un personaje capaz de moverse a velocidades extraordinarias.</p>
+
+				<div class="poder-box">
+					<h4>Poder especial</h4>
+					<p>Velocidad extrema.</p>
+				</div>
+
+				<button class="btn-poder" id="btnPoder">Activar poder</button>
+			</div>
+
+		</div>
+	</main>
+
+	<script>
+		const card = document.getElementById('cardPersonaje');
+		const boton = document.getElementById('btnPoder');
+
+		boton.addEventListener('click', function () {
+			const activo = card.classList.toggle('activo');
+			boton.textContent = activo ? 'Desactivar poder' : 'Activar poder';
+		});
+	</script>
+
+</body>
+</html>
