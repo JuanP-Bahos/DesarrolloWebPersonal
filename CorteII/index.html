@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorado Desafio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="pagina">
+    <header class="encabezado">
+      <div class="encabezado-titulo">
+        <h1>Dorado Desafio</h1>
+        <p>Universidad del rosario || Ronda <span id="numero-ronda">1</span></p>
+        <a href="#reglas">Ver las reglas del torneo</a>
+        <a href="#hoja">Ir a la hoja de respuestas</a>
+      </div>
+      <p class="letra-sorteada" id="letra" aria-label="Letra sorteada">D</p>
+    </header>
+
+    <main class="tablero" id="tablero">
+      <section>
+        
+        <h2>Tablero de la ronda</h2>
+        <div class="tabla-scroll">
+          <table id="tabla-ronda" border="1">
+            <caption>Respuestas de los jugadores del Dorado desafio</caption>
+            <thead>
+              <tr>
+                <th scope="col">Jugador</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Lugar</th>
+                <th scope="col">Animal</th>
+                <th scope="col">Objeto</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Comida</th>
+                <th scope="col">Puntos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="rival" data-jugador="Daniela">
+                <th scope="row">Daniela</th>
+                <td>Diana</td>
+                <td>Dubai</td>
+                <td>Delfin</td>
+                <td>Dado</td>
+                <td>Disney</td>
+                <td>Dona</td>
+                <td class="puntos"></td>
+              </tr>
+              <tr class="rival" data-jugador="Diego">
+                <th scope="row">Diego</th>
+                <td>Dante</td>
+                <td>Dinamarca</td>
+                <td>Delfin</td>
+                <td>Dedal</td>
+                <td>Dell</td>
+                <td>Dulce</td>
+                <td class="puntos"></td>
+              </tr>
+              <tr class="rival" data-jugador="Darío">
+                <th scope="row">Dario</th>
+                <td>Diana</td>
+                <td>Duitama</td>
+                <td>Delfin</td>
+                <td>Destornillador</td>
+                <td>Disney</td>
+                <td>Dulce</td>
+                <td class="puntos"></td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+              <section id="hoja">
+        <h2>Hoja de respuestas</h2>
+        <form id="formulario" action="#">
+          <fieldset>
+            <legend>Escribe tus seis respuestas</legend>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required
+                       pattern="[Dd][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}"
+                       title="Debe empezar por la letra D y tener al menos tres letras"
+                       oninvalid="this.setCustomValidity('Debe empezar por la letra D y tener al menos tres letras')"
+                       oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="lugar">Lugar</label>
+                <input type="text" id="lugar" name="lugar" required
+                       pattern="[Dd][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}"
+                       title="Debe empezar por la letra D y tener al menos tres letras"
+                       oninvalid="this.setCustomValidity('Debe empezar por la letra D y tener al menos tres letras')"
+                       oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="animal">Animal</label>
+                <input type="text" id="animal" name="animal" required
+                       pattern="[Dd][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}"
+                       title="Debe empezar por la letra D y tener al menos tres letras"
+                       oninvalid="this.setCustomValidity('Debe empezar por la letra D y tener al menos tres letras')"
+                       oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="objeto">Objeto</label>
+                <input type="text" id="objeto" name="objeto" required
+                       pattern="[Dd][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}"
+                       title="Debe empezar por la letra D y tener al menos tres letras"
+                       oninvalid="this.setCustomValidity('Debe empezar por la letra D y tener al menos tres letras')"
+                       oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" name="marca" required
+                       pattern="[Dd][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}"
+                       title="Debe empezar por la letra D y tener al menos tres letras"
+                       oninvalid="this.setCustomValidity('Debe empezar por la letra D y tener al menos tres letras')"
+                       oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="comida">Comida</label>
+                <input type="text" id="comida" name="comida" required
+                       pattern="[Dd][A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}"
+                       title="Debe empezar por la letra D y tener al menos tres letras"
+                       oninvalid="this.setCustomValidity('Debe empezar por la letra D y tener al menos tres letras')"
+                       oninput="this.setCustomValidity('')">
+              </div>
+              <div class="col-6">
+                <label for="letra-select">Letra del torneo</label>
+                <select id="letra-select" name="letra">
+                  <option>A</option><option>B</option><option>C</option><option selected>D</option>
+                  
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="ronda">Número de ronda</label>
+                <input type="number" id="ronda" name="ronda" min="1" max="13" value="1" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="multimedia">
+            <img src="recursos/escudo.jpg" alt="Escudo" width="72" height="84">
+            <audio controls src="recursos/timbre.mp3"></audio>
+          </div>
+
+          <div class="botones">
+            <button type="submit" class="boton boton-stop" id="boton-stop">STOP</button>
+            <button type="reset" class="boton boton-secundario">Dejar en blanco</button>
+          </div>
+        </form>
+      </section>
+
+      </section>
+    </main>
+
+    <aside class="reglas" id="reglas">
+      <h2>Reglas del torneo</h2>
+      <section class="tarjeta">
+        <h3>Reglas del parcial</h3>
+        <ol>
+          <li>El parcial es individual. Cada estudiante entrega su propio repositorio.</li>
+          <li>Duración: 120 minutos exactos. El cronómetro es público y no se detiene.</li>
+          <li>La letra del torneo se sortea al minuto cero y es la misma para todo el grupo. Todo el contenido que usted invente —nombres, respuestas, nombre del torneo— debe empezar por esa letra.</li>
+          <li>Las rondas son secuenciales: lo que construye en una es el insumo de la siguiente.</li>
+          <li>Al final de cada ronda el profesor anuncia ¡STOP!: todos hacen commit con el formato ronda-NN: descripción. El historial de git es parte de la evaluación.</li>
+          <li>Se permite consultar documentación oficial: MDN, react.dev, getbootstrap.com y la documentación de TypeScript.</li>
+          <li>No se permiten asistentes de inteligencia artificial, código propio de proyectos anteriores ni plantillas descargadas.</li>
+          <li>Todo se escribe durante el parcial, desde una carpeta vacía. Lo único que recibe es el kit del torneo.</li>
+          <li>No se evalúa backend, bases de datos ni estado en React: este parcial cubre HTML, CSS, JavaScript y componentes con props.</li>
+          <li>Cada estudiante tiene dos comodines PISTA (el profesor responde una duda puntual; cuesta el 10 % de esa ronda) y un comodín SALTO (usa el archivo de rescate del kit para continuar; esa ronda vale 0 pero la cadena no se rompe).</li>
+          <li>Si una ronda no le funciona, documente en BITACORA.md qué intentó y qué error obtuvo: eso otorga puntaje parcial.</li>
+          <li>La entrega se hace dentro del tiempo. Lo que llegue después no se evalúa.</li>
+        </ol>
+      </section>
+      <section class="tarjeta">
+        <h3>Categorías</h3>
+        <ul>
+          <li>Nombre</li>
+          <li>Lugar</li>
+          <li>Animal</li>
+          <li>Objeto</li>
+          <li>Marca</li>
+          <li>Comida</li>
+        </ul>
+      </section>
+      <section class="tarjeta">
+        <h3>Puntaje</h3>
+        <ul>
+          <li>100 puntos: respuesta valida y unica</li>
+          <li>50 puntos: valida, pero otro jugador la escribio</li>
+          <li>25 puntos: valida y repetida por tres o mas jugadores</li>
+          <li>0 puntos: vacia o invalida</li>
+        </ul>
+      </section>
+    </aside>
+
+    <footer class="pie">
+      <p>Juan Pablo Bahos Lopez || Grupo 4 || Desarrollo Web</p>
+    </footer>
+   
+  </div>
+</body>
+</html>
