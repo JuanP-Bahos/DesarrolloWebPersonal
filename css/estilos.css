@@ -1,0 +1,115 @@
+/*
+Paleta:
+Rojo vino — color principal para títulos: #8B0000
+Rojo vivo — color de acento para destacar elementos: #C62828
+Rosa claro — color de fondo: #FFF5F5
+Gris oscuro — texto principal: #282828
+Gris medio — texto secundario: #5C5C5C
+*/
+:root {
+  --color-principal: #8B0000;
+  --color-acento: #C62828;
+  --color-fondo: #FFF5F5;
+  --color-texto: #282828;
+  --color-texto-secundario: #5C5C5C;
+  --radio: 0.5rem;
+  --texto-cuerpo: 1rem;
+  --texto-h1: 2.5rem;
+  --texto-h2: 1.75rem;
+  --texto-h3: 1.25rem;
+  --fuente-titulos: "Lora", Georgia, "Times New Roman", serif;
+  --fuente-cuerpo: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+/* Incluye relleno y bordes en las dimensiones para evitar que el contenido "se salga" */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--texto-cuerpo);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+}
+
+h1 {
+  font-size: var(--texto-h1);
+}
+
+h2 {
+  font-size: var(--texto-h2);
+}
+
+h3 {
+  font-size: var(--texto-h3);
+}
+
+.encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  color: var(--color-fondo);
+  background-color: var(--color-principal);
+}
+
+.encabezado .letra-sorteada {
+  margin: 0;
+  color: var(--color-fondo);
+  font-family: var(--fuente-titulos);
+  font-size: clamp(10rem, 38vw, 28rem);
+  line-height: 0.85;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-principal);
+}
+
+th,
+td {
+  padding: 0.6rem;
+  border: 1px solid var(--color-principal);
+}
+
+thead {
+  color: var(--color-fondo);
+  background-color: var(--color-principal);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-fondo);
+}
+
+#formulario .row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+#formulario label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+#formulario input,
+#formulario select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-texto-secundario);
+  border-radius: var(--radio);
+}
+
+#formulario input[type="number"] {
+  border-color: var(--color-acento);
+}
