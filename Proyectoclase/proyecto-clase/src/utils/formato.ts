@@ -1,5 +1,3 @@
-formato.ts
-
 import { UNIDADES_MINIMAS, type Categoria } from '../types/producto';
 
 // Se crea una sola vez y se reutiliza (crear un formateador en cada llamada es costoso).
