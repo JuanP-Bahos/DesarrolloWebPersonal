@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    /* Versión de JavaScript que generará tsc */
+    "target": "es2023",
+    "lib": ["ES2023"],
+    "types": ["node"],
+
+    /* Módulos: Node.js en modo CommonJS (sin "type": "module" en package.json).
+       Así podemos escribir import/export sin agregar la extensión .js a cada ruta. */
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+
+    /* Carpetas de entrada (código TS) y de salida (código JS compilado) */
+    "rootDir": "src",
+    "outDir": "dist",
+
+    /* Revisiones estrictas: detectan errores antes de ejecutar */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}

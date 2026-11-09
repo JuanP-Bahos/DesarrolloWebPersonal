@@ -1,0 +1,106 @@
+### ───────────────────────────────────────────────────────────────
+### Pruebas de la API de StockFácil
+### Úsalas con la extensión "REST Client" de VS Code:
+###   haz clic en "Send Request" encima de cada petición.
+### También puedes importar pruebas/stockfacil.postman_collection.json
+### en Postman, Insomnia o Thunder Client.
+### ───────────────────────────────────────────────────────────────
+
+@api = http://localhost:3000/api
+
+### 1. Estado del servidor  → 200
+GET {{api}}/salud
+
+### 2. Listar productos  → 200
+GET {{api}}/productos
+
+### 3. Crear producto  → 201
+# @name crear
+POST {{api}}/productos
+Content-Type: application/json
+
+{
+  "codigo": "HOG-001",
+  "nombre": "Bombillo LED 9 W",
+  "descripcion": "Luz blanca, rosca E27",
+  "categoria": "Hogar",
+  "precio": 6500,
+  "stock": 25
+}
+
+### Guarda el id del producto creado (REST Client lo toma de la respuesta anterior)
+@id = {{crear.response.body.id}}
+
+### 4. Obtener producto por id  → 200
+GET {{api}}/productos/{{id}}
+
+### 5. Reemplazar producto (PUT: todos los campos)  → 200
+PUT {{api}}/productos/{{id}}
+Content-Type: application/json
+
+{
+  "codigo": "HOG-001",
+  "nombre": "Bombillo LED 12 W",
+  "descripcion": "Luz cálida, rosca E27",
+  "categoria": "Hogar",
+  "precio": 8200,
+  "stock": 20
+}
+
+### 6. Actualizar solo el stock (PATCH: campos parciales)  → 200
+PATCH {{api}}/productos/{{id}}
+Content-Type: application/json
+
+{
+  "stock": 19
+}
+
+### 7. Eliminar producto  → 204
+DELETE {{api}}/productos/{{id}}
+
+### ─────────────── CASOS DE ERROR ───────────────
+
+### 8. Datos inválidos  → 400 con lista de errores
+POST {{api}}/productos
+Content-Type: application/json
+
+{
+  "codigo": "X",
+  "nombre": "ab",
+  "categoria": "Ropa",
+  "precio": -100,
+  "stock": 2.5
+}
+
+### 9. Código repetido  → 409 (ejecuta primero `npm run seed`)
+POST {{api}}/productos
+Content-Type: application/json
+
+{
+  "codigo": "ELE-001",
+  "nombre": "Producto duplicado",
+  "categoria": "Electrónica",
+  "precio": 1000,
+  "stock": 1
+}
+
+### 10. Id con formato inválido  → 400
+GET {{api}}/productos/123
+
+### 11. Id válido que no existe  → 404
+GET {{api}}/productos/66f000000000000000000000
+
+### 12. PATCH sin campos  → 400
+PATCH {{api}}/productos/66f000000000000000000000
+Content-Type: application/json
+
+{}
+
+### 13. JSON mal escrito  → 400
+POST {{api}}/productos
+Content-Type: application/json
+
+{ "codigo": "ABC-1", }
+
+### 14. Ruta que no existe  → 404
+GET {{api}}/clientes

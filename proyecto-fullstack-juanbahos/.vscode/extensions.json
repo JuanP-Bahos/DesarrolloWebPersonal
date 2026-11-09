@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "humao.rest-client",
+    "rangav.vscode-thunder-client",
+    "mongodb.mongodb-vscode",
+    "oxc.oxc-vscode"
+  ]
+}
