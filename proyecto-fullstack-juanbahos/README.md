@@ -147,7 +147,8 @@ cd backend
 npm run dev          # http://localhost:3000/api
 
 # Terminal 2 — Interfaz
-npm run dev          # desde la raíz del proyecto; http://localhost:5173
+cd frontend
+npm run dev          # http://localhost:5173
 ```
 
 Abre **http://localhost:5173**.
@@ -156,7 +157,6 @@ Abre **http://localhost:5173**.
 
 | Proyecto | Script | Qué hace |
 |----------|--------|----------|
-| raíz | `npm run dev` | Inicia el servidor de desarrollo del frontend |
 | backend | `npm run dev` | Inicia la API con recarga automática (tsx watch) |
 | backend | `npm run seed` | Borra los productos y carga 6 de ejemplo |
 | backend | `npm run build` | Compila TypeScript a `dist/` |
@@ -290,7 +290,6 @@ proyecto-fullstack/
 ├── .vscode/extensions.json            # Extensiones recomendadas
 ├── .env.example                       # Referencia de todas las variables
 ├── .gitignore
-├── package.json                       # Comando npm run dev desde la raíz
 ├── README.md
 ├── GUIA_EJECUCION.md
 └── DOCENTE.md

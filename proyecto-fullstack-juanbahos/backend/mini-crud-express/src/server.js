@@ -1,6 +1,13 @@
-const app = require('./app');
+// encender servidor
+const app = require("./app");
 
-const PUERTO=3000;
-app.listen(PUERTO, () => {
-    console.log(`Servidor escuchando en el puerto http://localhost:${PUERTO}/api/tareas`);
-})
+const puerto=3000;
+
+app.listen(puerto, () => {
+  console.log(`Api tareas escuchando en http://localhost:${puerto}/api/tareas`);
+  console.log(`Documentación de la API disponible en http://localhost:${puerto}/api/docs`);
+}   
+)
+
+
+                            

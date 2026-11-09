@@ -1,47 +1,45 @@
-//capa de servicio para manejar la logica de negocio de las tareas
-const tareas = require('../data/tareas.data');
-const HttpError = require('../utils/HttpError');
+const HttpError = require("../utils/HttpError");
 
-//BASE DE DATOS SIMULADA
-
-let tareas= [
-{id:1,titulo:"Realizar avances de desarrollo web", completado:false},
-{id:2,titulo:"Hacer tareas de compleja", completado:true},
-{id:3,titulo:"Estudiar para el examen de matematicas", completado:false},
-
+let tareas = [
+  { id: 1, titulo: "Realizar avances de Proyecto desarrollo web", completado: false },
+  { id: 2, titulo: "Hacer tareas de Real", completado: true },
+  { id: 3, titulo: "Estudiar para compleja", completado: true },
 ];
 
 let siguienteId = 4;
+function listar(){
+    return tareas;
+}
 
 function listar(){
     return tareas;
 }
 
 function obtener(id){
-    const tareas = tareas.find((t) => t.id === id);
-    if(!tarea){
-        throw new HttpError(404, 'No existe la tarea con el id ${id}');
+    const tarea = tareas.find((t)  => t.id === id);
+    if (!tarea) {
+        throw new HttpError(404, `No existe la tarea con el id ${id}`);
     }
     return tarea;
 }
 
-function crear(titulo){
-    const nueva = {
+function crear(titulo) {
+    const nuevaTarea = {
         id: siguienteId++,
         titulo,
-        completado: false
+        completado: false,
     };
-    tareas.push(nueva);
-    return nueva;
+    tareas.push(nuevaTarea);
+    return nuevaTarea;
 }
-
-function actualizar(id, cambios){
+    
+function actualizar(id, cambios) {
     const tarea = obtener(id);
-    Object.assign(tarea, cambios);
+    object.assign(tarea, cambios);
     return tarea;
 }
 
-function eliminar(id){
+function eliminar(id) {
     obtener(id);
     tareas = tareas.filter((t) => t.id !== id);
 }
@@ -49,8 +47,7 @@ function eliminar(id){
 module.exports = {
     listar,
     obtener,
-    crear,      
+    crear,
     actualizar,
-    eliminar
-};  
-
+    eliminar,
+};
